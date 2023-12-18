@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://bqvuy026bhh7q"]
+
+[ext_resource type="Script" path="res://TileView.gd" id="1_e2mhp"]
+[ext_resource type="Texture2D" uid="uid://dvg1v02rtk7n8" path="res://assets/x-stitch.png" id="1_lujap"]
+[ext_resource type="Script" path="res://StitchColor.gd" id="3_tcb54"]
+[ext_resource type="Texture2D" uid="uid://be7o0xpk8ux3m" path="res://assets/stitch_colors.png" id="3_tqm2l"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3jy7v"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lcaqo"]
+texture = ExtResource("1_lujap")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jn0r8"]
+texture = ExtResource("3_tqm2l")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_w1k7y"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_3jy7v")
+sources/1 = SubResource("TileSetAtlasSource_lcaqo")
+sources/2 = SubResource("TileSetAtlasSource_jn0r8")
+
+[node name="TileView" type="Node2D"]
+script = ExtResource("1_e2mhp")
+
+[node name="StitchColorTiles" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_w1k7y")
+cell_quadrant_size = 64
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 1, 0, 65537, 1, 0, 131074, 1, 0)
+script = ExtResource("3_tcb54")
+
+[node name="StitchSymbolTiles" type="TileMap" parent="."]
+format = 2
+
+[node name="BackStitchTiles" type="TileMap" parent="."]
+format = 2

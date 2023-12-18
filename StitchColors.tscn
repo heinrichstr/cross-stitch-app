@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://qmdcqn64gk0d"]
+
+[ext_resource type="Script" path="res://StitchColors.gd" id="1_8n1lf"]
+
+[node name="StitchColors" type="Node"]
+script = ExtResource("1_8n1lf")
