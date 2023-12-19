@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cl0b6usrhdews"]
+[gd_scene load_steps=6 format=3 uid="uid://cl0b6usrhdews"]
 
+[ext_resource type="StyleBox" uid="uid://1e02i0ahpg47" path="res://panelTheme.tres" id="1_nimkv"]
+[ext_resource type="Script" path="res://ColorRect.gd" id="1_ugj1c"]
 [ext_resource type="Script" path="res://Label2.gd" id="1_vyj8o"]
+[ext_resource type="Script" path="res://VBoxContainer.gd" id="3_8rie2"]
 
 [sub_resource type="Theme" id="Theme_e65qj"]
 
@@ -15,11 +18,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
 alignment = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_e65qj")
+theme_override_styles/panel = ExtResource("1_nimkv")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer"]
 layout_mode = 2
@@ -36,6 +41,7 @@ size_flags_vertical = 3
 [node name="ColorContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
+theme_override_styles/panel = ExtResource("1_nimkv")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ColorContainer"]
 layout_mode = 2
@@ -46,6 +52,7 @@ theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/ColorContainer/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="CurrentColorContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ColorContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -59,9 +66,26 @@ size_flags_vertical = 4
 layout_mode = 2
 text = "Current Color:"
 
-[node name="CurrentColorLabel" type="Label" parent="VBoxContainer/HBoxContainer/ColorContainer/MarginContainer/VBoxContainer/CurrentColorContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/ColorContainer/MarginContainer/VBoxContainer/CurrentColorContainer/VBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer/ColorContainer/MarginContainer/VBoxContainer/CurrentColorContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+script = ExtResource("1_ugj1c")
+
+[node name="CurrentColorLabel" type="Label" parent="VBoxContainer/HBoxContainer/ColorContainer/MarginContainer/VBoxContainer/CurrentColorContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 script = ExtResource("1_vyj8o")
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/ColorContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nimkv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/ColorContainer/MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+script = ExtResource("3_8rie2")
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
 process_mode = 4
@@ -74,6 +98,7 @@ theme_override_constants/margin_bottom = 20
 
 [node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_styles/panel = ExtResource("1_nimkv")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/PanelContainer2"]
 layout_mode = 2
@@ -85,6 +110,7 @@ theme_override_constants/margin_bottom = 20
 [node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_e65qj")
+theme_override_styles/panel = ExtResource("1_nimkv")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer2"]
 layout_mode = 2

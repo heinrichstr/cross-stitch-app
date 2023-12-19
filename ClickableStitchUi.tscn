@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuamqksflhkwd"]
+
+[ext_resource type="Script" path="res://Control.gd" id="1_sk6fk"]
+
+[node name="Control" type="MarginContainer"]
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+script = ExtResource("1_sk6fk")
+
+[node name="Button" type="Button" parent="."]
+process_mode = 1
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
