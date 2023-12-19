@@ -4,7 +4,7 @@ extends TileMap
 func _ready():
 	pass # Replace with function body.
 
-func _input(event):
+func _unhandled_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == 1:
 			# Get the position of the mouse click in world coordinates

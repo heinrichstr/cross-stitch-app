@@ -6,4 +6,4 @@ extends Node2D
 # reset state
 
 func _ready():
-	pass # Replace with function body.
+	DisplayServer.window_set_min_size(Vector2(720,480))
