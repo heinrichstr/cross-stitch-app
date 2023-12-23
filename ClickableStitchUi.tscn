@@ -20,6 +20,7 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 mouse_filter = 2
+theme_override_constants/separation = 10
 
 [node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
 custom_minimum_size = Vector2(20, 20)

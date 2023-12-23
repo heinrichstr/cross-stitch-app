@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqvuy026bhh7q"]
+[gd_scene load_steps=10 format=3 uid="uid://bqvuy026bhh7q"]
 
 [ext_resource type="Script" path="res://TileView.gd" id="1_e2mhp"]
 [ext_resource type="Texture2D" uid="uid://dvg1v02rtk7n8" path="res://assets/x-stitch.png" id="1_lujap"]
 [ext_resource type="Script" path="res://StitchColor.gd" id="3_tcb54"]
 [ext_resource type="Texture2D" uid="uid://be7o0xpk8ux3m" path="res://assets/stitch_colors.png" id="3_tqm2l"]
+[ext_resource type="Script" path="res://Grid.gd" id="5_if0ue"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3jy7v"]
 
@@ -41,3 +42,7 @@ format = 2
 
 [node name="BackStitchTiles" type="TileMap" parent="."]
 format = 2
+
+[node name="Grid" type="TileMap" parent="."]
+format = 2
+script = ExtResource("5_if0ue")

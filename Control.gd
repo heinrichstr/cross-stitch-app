@@ -8,7 +8,7 @@ var dmc = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$HBoxContainer/Label.text = labelText
+	$HBoxContainer/Label.text = dmc + " " + labelText
 	$HBoxContainer/ColorRect.color = color
 
 

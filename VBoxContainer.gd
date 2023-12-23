@@ -16,7 +16,7 @@ func setColorsList():
 	for stitch in StitchColors.stitchColors:
 		var new_stitch = StitchUi.instantiate()
 		new_stitch.dmc = stitch.stitchDmc
-		new_stitch.labelText = stitch.stitchDmc
+		new_stitch.labelText = stitch.stitchName
 		new_stitch.color = stitch.stitchColor
 		new_stitch.onClick = func(): StitchState.currentStitchColor = new_stitch.dmc
 		add_child(new_stitch)
