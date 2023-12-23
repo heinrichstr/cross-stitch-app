@@ -20,4 +20,6 @@ follow_viewport_enabled = false
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 320)
 zoom = Vector2(0.318, 0.318)
+limit_left = -2560
+limit_top = -1920
 script = ExtResource("5_ty0b5")

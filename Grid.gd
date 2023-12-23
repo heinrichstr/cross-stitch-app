@@ -5,8 +5,10 @@ var GridLine = preload("res://grid_line.tscn")
 var zoom_level = 1
 
 #get data from settings
-var grid_size = Vector2(84,60)
-var cell_size = 64
+var grid_size = StitchState.grid_size
+var cell_size = StitchState.cell_size
+var line_width = 1
+var big_line_width = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,7 +19,7 @@ func _ready():
 func draw_grid_line(line_num, column):
 	var line = GridLine.instantiate()
 	line.default_color = Color(.4,.4,.4,.5)
-	line.width = 1 / zoom_level
+	line.width = line_width / zoom_level
 	line.antialiased = true
 	
 	if column == true:
@@ -28,7 +30,7 @@ func draw_grid_line(line_num, column):
 		line.add_point(Vector2(grid_size.x*cell_size, line_num*cell_size))
 		
 	if int(line_num) % 10 == 0:
-		line.width = 5 / zoom_level
+		line.width = big_line_width / zoom_level
 		line.default_color = Color(1,0,0,.8)
 		
 	add_child(line)

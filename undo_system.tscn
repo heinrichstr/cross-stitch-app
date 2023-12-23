@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://kjx2xlxcew2x"]
+
+[ext_resource type="Script" path="res://UndoSystem.gd" id="1_rcfts"]
+[ext_resource type="Script" path="res://UndoableAction.gd" id="2_36q1k"]
+
+[node name="UndoSystem" type="Node2D"]
+script = ExtResource("1_rcfts")
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("2_36q1k")

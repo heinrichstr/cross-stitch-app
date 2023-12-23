@@ -7,7 +7,8 @@ var dragging = false
 
 
 func _ready():
-	pass # Replace with function body.
+	limit_right = (StitchState.grid_size.x + 40) * StitchState.cell_size
+	limit_bottom = (StitchState.grid_size.y + 30) * StitchState.cell_size
 
 
 func _input(event):
